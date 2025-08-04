@@ -15,8 +15,14 @@
 </head>
 
 <body>
-  <p>Nothing to see here...</p>
-  <!-- Project -->
+ <form id="pinForm">
+  <h3>Set Your 4-Digit PIN</h3>
+  <input type="text" id="accountInput" placeholder="Account Number" required>
+  <input type="password" id="pin1" placeholder="Enter 4-digit PIN" required maxlength="4">
+  <input type="password" id="pin2" placeholder="Re-enter 4-digit PIN" required maxlength="4">
+  <button type="submit">Save PIN</button>
+  <div class="success" id="pinMsg"></div>
+</form>
   <script src="main.js"></script>
 </body>
 </html>
