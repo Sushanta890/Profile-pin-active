@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manager Profile</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(to left, #a7ffeb, #84ffff);
+      padding: 40px;
+    }
+    .profile-box {
+      background: #ffffffcc;
+      border-radius: 10px;
+      padding: 30px;
+      width: 500px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    h2 { text-align: center; }
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="profile-box">
+  <h2>Manager Account Profile</h2>
+  <div id="profileInfo"></div>
+</div>
+
+<script>
+  const manager = JSON.parse(localStorage.getItem("managerAccount"));
+
+  if (manager) {
+    document.getElementById("profileInfo").innerHTML = `
+      <p><strong>Full Name:</strong> ${manager.fullName}</p>
+      <p><strong>DOB:</strong> ${manager.dob}</p>
+      <p><strong>Mobile:</strong> ${manager.mobile}</p>
+      <p><strong>Email:</strong> ${manager.email}</p>
+      <p><strong>Account Number:</strong> ${manager.accountNo}</p>
+      <p><strong>IFSC:</strong> ${manager.ifsc}</p>
+      <p><strong>Customer ID:</strong> ${manager.customerId}</p>
+      <p><strong>Balance:</strong> ₹${manager.balance.toFixed(2)}</p>
+    `;
+  } else {
+    document.getElementById("profileInfo").innerHTML = "<p>No manager profile found.</p>";
+  }
+</script>
+
+</body>
+</html>

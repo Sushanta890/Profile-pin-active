@@ -20,6 +20,6 @@ document.getElementById("pinForm").addEventListener("submit", function(e) {
   localStorage.setItem("managerAccount", JSON.stringify(manager));
   document.getElementById("pinMsg").textContent = "PIN set successfully! Redirecting...";
   setTimeout(() => {
-    window.location.href = "pin-login.html";
+    window.location.href = "manager-profile.html";
   }, 2000);
 });
